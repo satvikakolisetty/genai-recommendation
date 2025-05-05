@@ -1,0 +1,93 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.env
+.venv
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+*.tfvars.json
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+.terraformrc
+terraform.rc
+
+# Docker
+.docker/
+docker-compose.override.yml
+
+# Logs
+*.log
+logs/
+log/
+
+# Local development
+*.local
+*.local.*
+
+# Model artifacts
+ml/models/
+ml/checkpoints/
+ml/tensorboard/
+
+# Snowflake
+snowflake/credentials.json
+snowflake/config.json
+
+# AWS
+.aws/
+aws_credentials.json
+
+# GCP
+.gcp/
+gcp_credentials.json
+*.json.key
+
+# Generated files
+architecture.png
+*.png
+*.jpg
+*.jpeg
+*.gif
+
+# Temporary files
+tmp/
+temp/ 

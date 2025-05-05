@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  api:
+    build: ./api
+    ports:
+      - "8000:8000"
+    environment:
+      - GCP_PROJECT_ID=${GCP_PROJECT_ID}
+      - GCP_REGION=${GCP_REGION}
+      - VERTEX_AI_ENDPOINT=${VERTEX_AI_ENDPOINT}
+      - SNOWFLAKE_USER=${SNOWFLAKE_USER}
+      - SNOWFLAKE_PASSWORD=${SNOWFLAKE_PASSWORD}
+      - SNOWFLAKE_ACCOUNT=${SNOWFLAKE_ACCOUNT}
+      - SNOWFLAKE_WAREHOUSE=${SNOWFLAKE_WAREHOUSE}
+      - SNOWFLAKE_DATABASE=${SNOWFLAKE_DATABASE}
+      - SNOWFLAKE_SCHEMA=${SNOWFLAKE_SCHEMA}
+    depends_on:
+      - data_generator
+    networks:
+      - recommendation_network
+
+  dashboard:
+    build: ./dashboard
+    ports:
+      - "8501:8501"
+    environment:
+      - API_URL=http://api:8000
+    depends_on:
+      - api
+    networks:
+      - recommendation_network
+
+  data_generator:
+    build: ./data
+    environment:
+      - KINESIS_STREAM_NAME=${KINESIS_STREAM_NAME}
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - AWS_REGION=${AWS_REGION}
+    networks:
+      - recommendation_network
+
+networks:
+  recommendation_network:
+    driver: bridge 
