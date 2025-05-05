@@ -4,14 +4,7 @@ A production-ready, multi-cloud recommendation engine that leverages AWS, GCP, a
 
 ## 🏗️ Architecture
 
-![Architecture Diagram](architecture.png)
-
-*To generate the architecture diagram PNG:*
-1. Copy the Mermaid diagram from `ARCHITECTURE.md`
-2. Use one of these methods to generate the PNG:
-   - Visit [Mermaid Live Editor](https://mermaid.live) and paste the diagram
-   - Use the Mermaid CLI: `npx @mermaid-js/mermaid-cli -i ARCHITECTURE.md -o architecture.png`
-   - Use VS Code with the Mermaid extension
+![Architecture Diagram](architecture-1.png)
 
 ### Components
 
